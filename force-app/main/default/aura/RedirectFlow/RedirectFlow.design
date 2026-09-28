@@ -1,0 +1,3 @@
+<design:component label="Simply Ez Tasks - Redirect Flow">
+    <design:attribute name="objectApiName" label="Object Api Name" />
+</design:component>

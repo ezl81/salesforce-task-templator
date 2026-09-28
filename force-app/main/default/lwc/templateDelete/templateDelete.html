@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 05-31-2024
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<template>
+    <lightning-quick-action-panel header="Edit Fields Action">
+        <lightning-card title="Delete Template">
+            Are you sure you want to delete this template?
+            <div slot="footer">
+                <lightning-button variant="brand" label="Delete" onclick={onClickDelete}></lightning-button>
+                <lightning-button variant="neutral" label="Cancel" onclick={onClickCancel}></lightning-button>
+            </div>
+        </lightning-card>   
+    </lightning-quick-action-panel>
+</template>

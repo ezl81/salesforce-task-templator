@@ -1,0 +1,92 @@
+<!--
+  @description       : 
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 09-18-2025
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<apex:page controller="TaskTrackerController">
+
+    <style>
+        /*
+        .hidden {
+        display:none;
+        }
+        .completed {
+            position: absolute !important;
+        }
+        
+        .label text {
+            font-weight: 600;
+            font-size: 14px;
+            color: aqua !important;
+        }
+        .node rect,
+        .node polygon {
+            fill: #f3f6f9;
+            stroke: #d8dde6;
+            stroke-width: 1.5px;
+            rx: 4;
+            ry: 4;
+            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+        }
+        .node text {
+            font-family: 'Salesforce Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+        }
+        .edgePath path {
+            stroke: #98a6b1;
+            stroke-width: 1.5px;
+            fill: none;
+        }
+        .nodeLabel p {
+            font-family: 'Salesforce Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            margin: 0;
+        }
+        .cluster rect,
+        .cluster polygon {
+            fill: white !important;
+            stroke:#16325c !important;
+        }
+        */
+        .simply-ez-icon {
+            height: 20px !important;
+            width: 20px !important;
+            display: inline !important;
+        }
+        */
+    </style>
+
+    <apex:slds />
+    <apex:includeScript value="{!$Resource.mermaid_min_js}" loadOnReady="true"></apex:includeScript>
+
+    <div class="slds-scope">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-12" style="text-align: center;">
+                <apex:outputLink value="{! URLFOR(thisUrl) }" target="_blank" rendered="{! NOT(fullScreen) }">
+                    <apex:image value="{! URLFOR($Resource.fullscreen) }" alt="Full Screen" title="Full Screen" height="20" width="20"></apex:image>
+                </apex:outputLink>
+            </div>
+            <div class="slds-col slds-size_11-of-12"> 
+                 &nbsp;
+            </div>
+        </div>
+
+        <div class="slds-col slds-size_12-of-12">
+
+            <div id="panzoom">
+                <div id="flow" class="mermaid slds-p-around_medium">
+                    {!mermaidFlow}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true
+        });
+    </script>
+
+</apex:page>

@@ -1,0 +1,32 @@
+<!--
+  @File Name          : TaskTrackerTasksCompletedList.cmp
+  @Description        :
+  @Author             : Revolution Group (Brian Ezell)
+  @Group              :
+  @Last Modified By   : Brian Ezell (Simply EZ)
+  @Last Modified On   : 05-24-2024
+  @Modification Log   :
+  Ver       Date            Author      		    Modification
+  1.0    1/28/2020   Revolution Group (Brian Ezell)     Initial Version
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+    access="global" controller="CaseTaskCheckListController">
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+    <aura:attribute name="TaskList" type="List" />
+    <aura:attribute name="CompletedTasks" type="String[]" />
+    <aura:attribute name="IsLoading" type="Boolean" default="false" />
+
+    <lightning:card title="Simply Tasks Checklist" class="slds-var-p-around_medium">
+        <aura:if isTrue="{! not(empty(v.TaskList)) }">
+            <lightning:checkboxGroup aura:id="chkTaskList" name="chkTaskList" label="Task List" options="{! v.TaskList }"
+                value="{! v.CompletedTasks }" onchange="{! c.toggleTaskListItem }" class="slds-var-p-around_medium" />
+        
+            <!--<lightning:spinner aura:id="loadingSpinner" size="medium" title="Loading" />-->
+            <aura:set attribute="else">
+                No Tasks On This Case
+            </aura:set>
+        </aura:if>
+
+    </lightning:card>
+
+</aura:component>

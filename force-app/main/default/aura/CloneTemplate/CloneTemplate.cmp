@@ -1,0 +1,44 @@
+<!--
+  @description       : 
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 06-03-2024
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" controller="CloneTemplateController">
+
+    <aura:attribute name="recordId" type="ID" />
+    <aura:attribute name="thisTemplate" type="SObject" />
+    <aura:attribute name="newTemplateName" type="String" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+
+    <lightning:card title="Clone Template" footer="Card Footer" iconName="utility:copy" >
+
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="12" class="slds-p-around_small">
+                <lightning:input type="text" label="Selected Template"
+                    value="{!v.thisTemplate.Name}" 
+                    readonly="true" />
+            </lightning:layoutItem>
+
+            <lightning:layoutItem size="12" class="slds-p-around_small">
+                <lightning:input type="text" label="New Template Name" 
+                    value="{!v.newTemplateName}" />
+            </lightning:layoutItem>
+        </lightning:layout>
+
+        <!--FOOTER-->
+        <aura:set attribute="footer">
+            <div>
+                <lightning:buttonGroup>
+                    <lightning:button label="Cancel" onclick="{! c.clickCancel }" />
+                    <lightning:button variant="brand" label="Clone" onclick="{! c.clickClone }" />
+                </lightning:buttonGroup>
+            </div>
+        </aura:set>
+
+    </lightning:card>
+    
+</aura:component>

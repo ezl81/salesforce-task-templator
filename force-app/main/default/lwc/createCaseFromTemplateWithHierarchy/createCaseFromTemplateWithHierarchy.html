@@ -1,0 +1,56 @@
+<template>
+    
+    <lightning-card title="Create Case from Template with Hierarchy">
+
+        <lightning-layout multiple-rows="true" class="slds-p-around_medium">
+
+            <lightning-layout-item size="12" class="slds-p-around_medium">
+
+                <template if:true={templateData}>
+                    <lightning-tree-grid
+                        key-field="id"
+                        data={templateData}
+                        columns={columns}
+                        is-loading={isLoading}
+                        ontoggle={handleCategoryToggle}
+                        onrowselection={handleRowSelection}
+                        selected-rows={selectedRows}
+                        expanded-rows={currentlyExpandedRows}>
+                    </lightning-tree-grid>
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" class="slds-p-around_medium">
+                <template if:true={hasError}>
+                    <p class="slds-text-color_error">{error}</p>
+                </template>
+                <template if:true={hasMessage}>
+                    <p class="slds-text-color_success">{message}</p>
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" class="slds-p-around_medium">
+                <template if:true={newCaseId}>
+                    <lightning-formatted-url 
+                        value={newCaseLink} 
+                        label="View New Case" 
+                        target="_blank">
+                    </lightning-formatted-url>
+                </template>
+            </lightning-layout-item>    
+
+            <lightning-layout-item size="12" class="slds-p-around_medium">
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </template>
+                <lightning-button 
+                    disabled={isCreateButtonDisabled}
+                    label="Create Case"
+                    onclick={onClickCreateCase}>
+                </lightning-button>
+            </lightning-layout-item>
+
+        </lightning-layout>
+        
+    </lightning-card>
+</template>

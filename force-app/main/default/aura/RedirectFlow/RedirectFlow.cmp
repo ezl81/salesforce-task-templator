@@ -1,0 +1,11 @@
+<!--
+  @description       : Redirects to the list page of a specific object.  This mainly is used to help flows that 
+    will delete the record they are called on so it doesn't show a page not found message.
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 05-31-2024
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<aura:component implements="force:lightningQuickAction,lightning:availableForFlowActions">
+    <aura:attribute name="objectApiName" type="String" />
+</aura:component>

@@ -1,0 +1,98 @@
+<!--
+  @File Name          : TaskTemplateDiagram.cmp
+  @Description        :
+  @Author             : Brain Ezell (Simply EZ)
+  @Group              :
+  @Last Modified By   : Brian Ezell (Simply EZ)
+  @Last Modified On   : 08-28-2024
+  @Modification Log   :
+  Ver       Date            Author      		    Modification
+  1.0    2/14/2020   Brain Ezell (Simply EZ)     Initial Version
+-->
+<aura:component
+    implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName"
+    access="global" controller="TemplateBuilderController">
+
+    <!-- Common JavaScript utility functions -->
+    <ltng:require scripts="{! $Resource.lightningComponentUtil }" />
+
+    <aura:attribute name="taskTemplateTitle" type="String" default="Simply Tasks Template Builder" />
+    <aura:attribute name="columns" type="List" access="PRIVATE" />
+    <aura:attribute name="gridData" type="Object" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+
+    <!--Confirm Delete Dialog-->
+    <aura:attribute name="deleteRecordConfirmationHeader" type="String" default="Delete Record" />
+    <aura:attribute name="deleteRecordConfirmationDialogHeader" type="String" default="Are you sure?" />
+    <aura:attribute name="deleteDialogMessage" type="String" />
+    <aura:attribute name="deleteRecordConfirmationRecordType" type="String" />
+    <aura:attribute name="deleteRecordConfirmationRecordId" type="String" />
+
+    <aura:attribute name="areAllNodesChecked" type="Boolean" default="true" />
+    <aura:attribute name="allRowsForExpansion" type="List" />
+    <aura:attribute name="currentlyExpandedRows" type="List" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+
+    <aura:attribute name="topLevelParentId" type="String" default="" />
+
+    <lightning:card class="slds-var-p-around_medium">
+        <aura:set attribute="title">
+            <lightning:icon iconName="custom:custom19" />
+            {! v.taskTemplateTitle }
+        </aura:set>
+
+        <div>
+            <lightning:button variant="base" label="Expand/Collapse All" title="Expand/Collapse All" onclick="{! c.handleToggleAllNodes }" />
+            <lightning:treeGrid 
+                aura:id="task-template-grid" 
+                columns="{! v.columns }" data="{! v.gridData }"
+                keyField="id" 
+                isLoading="{! v.isLoading }" 
+                onrowaction="{! c.handleRowAction }"
+                expandedRows="{! v.currentlyExpandedRows }">
+            </lightning:treeGrid>
+        </div>
+
+    </lightning:card>
+
+    <!-- Delete Charge Confirmation Dialog Box -->
+    <div aura:id="deleteRecordConfirmationDialog" role="dialog"
+        class="slds-modal slds-modal_prompt slds-fade-in-hide delete-record-confirmation-dialog" tabindex="-1"
+        aria-hidden="true" aria-labelledby="deleteRecordConfirmationHeader">
+        <div class="slds-modal__container">
+
+            <!-- Header -->
+            <div class="slds-modal__header">
+                <h2 id="deleteRecordConfirmationDialogHeader" class="slds-text-heading_medium">
+                    {!v.deleteRecordConfirmationHeader}</h2>
+            </div>
+
+            <!-- Spinner Container -->
+            <div class="slds-is-relative">
+
+                <!-- Message -->
+                <div class="slds-modal__content slds-p-around_medium slds-align_absolute-center">
+                    {!v.deleteDialogMessage}
+                </div>
+
+                <!-- Footer -->
+                <div class="slds-modal__footer">
+                    <lightning:button label="Cancel" class="slds-button slds-button_neutral"
+                        onclick="{! c.onCancelDeleteRecord }" />
+                    <lightning:button label="Yes" class="slds-button slds-button_destructive"
+                        onclick="{! c.onConfirmDeleteRecord }" />
+                </div>
+
+                <!-- Spinner -->
+                <lightning:spinner aura:id="deleteRecordSpinner" variant="brand" size="medium" class="slds-hide"
+                    alternativeText="Deleting Charge" />
+
+            </div>
+
+        </div>
+    </div>
+
+    <div aura:id="backdrop" class="slds-backdrop slds-backdrop--hide" />
+
+</aura:component>

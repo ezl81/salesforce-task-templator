@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>blue_progress</members>
+        <members>blue_progress_100</members>
+        <members>complete_png</members>
+        <members>event</members>
+        <members>eventdone</members>
+        <members>fullscreen</members>
+        <members>htmltest</members>
+        <members>lightningComponentUtil</members>
+        <members>mermaid</members>
+        <members>mermaid_min_js</members>
+        <members>task</members>
+        <members>taskdone</members>
+        <members>togglehorizontal</members>
+        <members>togglevertical</members>
+        <members>white_progress</members>
+        <members>white_progress_100</members>
+        <name>StaticResource</name>
+    </types>
+    <version>66.0</version>
+</Package>

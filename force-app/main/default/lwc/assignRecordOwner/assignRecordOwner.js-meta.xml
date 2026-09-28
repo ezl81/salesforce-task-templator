@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <masterLabel>Simply Tasks Assign Record Owner</masterLabel>
+    <description>This is used for Simply Takss template and template steps.  It sets up who owns the template object when it creates the cases and activities.</description>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Task_Template__c</object>
+                <object>Task_Template_Step__c</object>
+            </objects>
+            <property name="recordId" type="String" default="{recordId}" />
+            <property name="objectApiName" type="String" default="{objectApiName}" />
+            <property name="isReadOnly" type="Boolean" default="true" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

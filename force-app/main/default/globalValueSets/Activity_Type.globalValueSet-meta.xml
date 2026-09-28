@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Task</fullName>
+        <default>true</default>
+        <label>Task</label>
+    </customValue>
+    <customValue>
+        <fullName>Event</fullName>
+        <default>false</default>
+        <label>Event</label>
+    </customValue>
+    <description>For Simply Tasks - used to determine the type of the activity.</description>
+    <masterLabel>Activity Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

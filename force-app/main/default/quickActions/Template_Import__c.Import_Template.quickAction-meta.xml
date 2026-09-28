@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Attach the JSON file and then click import to bring the template into the system.</description>
+    <height>250</height>
+    <label>Import Template</label>
+    <lightningComponent>ImportTemplate</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

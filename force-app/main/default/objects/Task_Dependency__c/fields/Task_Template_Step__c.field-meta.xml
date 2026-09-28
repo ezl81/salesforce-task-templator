@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Template_Step__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Task Template Step</label>
+    <referenceTo>Task_Template_Step_Dependency__c</referenceTo>
+    <relationshipLabel>Task Dependencies</relationshipLabel>
+    <relationshipName>Task_Dependencies</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Depends_On_Step__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Depends On Step</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Task_Template_Step__c.Id</field>
+            <operation>notEqual</operation>
+            <valueField>$Source.Step__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Task_Template_Step__c</referenceTo>
+    <relationshipLabel>Task Template Step Dependencies (Depends On Step)</relationshipLabel>
+    <relationshipName>Task_Template_Step_Dependencies1</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

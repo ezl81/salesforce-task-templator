@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Task_Completed__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND (
+    Is_Simply_Tasks_Created__c,
+    IF (
+        IsTask,
+        IsClosed,
+        ActivityDate &lt; TODAY()
+    )
+)</formula>
+    <label>Is Task Completed</label>
+    <type>Checkbox</type>
+</CustomField>

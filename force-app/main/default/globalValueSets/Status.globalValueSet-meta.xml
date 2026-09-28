@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Started</fullName>
+        <default>true</default>
+        <label>Not Started</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting on someone else</fullName>
+        <default>false</default>
+        <label>Waiting on someone else</label>
+    </customValue>
+    <customValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+    </customValue>
+    <description>Used for Simply Tasks - determines the status of the activity.</description>
+    <masterLabel>Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

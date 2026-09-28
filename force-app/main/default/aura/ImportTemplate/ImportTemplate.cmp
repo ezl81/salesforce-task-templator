@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 09-12-2024
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global"
+    controller="ImportTemplateController">
+
+    <aura:attribute name="recordId" type="ID" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+    <aura:attribute name="masterTemplateUrl" type="String" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+
+    <lightning:card title="Import Template" iconName="utility:copy">
+
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="12" class="slds-p-around_small">
+
+                <aura:if isTrue="{!v.isLoading}">
+                    <lightning:spinner alternativeText="Loading..." size="small" />
+                    <aura:set attribute="else">
+                        <p>
+                            Done!
+                        </p>
+                        <a href="{!v.masterTemplateUrl}">View New Template</a>
+                    </aura:set>
+                </aura:if>
+
+            </lightning:layoutItem>
+        </lightning:layout>
+
+    </lightning:card>
+
+</aura:component>

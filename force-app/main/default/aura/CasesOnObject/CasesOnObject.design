@@ -1,0 +1,3 @@
+<design:component label="Simply Tasks Cases On Object Tracker">
+    <design:attribute name="CaseLinkedField" label="Field On Case that links to the object (ex. ContactId for contacts)" />
+</design:component>

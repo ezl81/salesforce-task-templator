@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 05-22-2024
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<template>
+    
+    <lightning-card title="Create from Template">
+
+        <lightning-layout multiple-rows="true" class="slds-p-around_medium">
+
+            <lightning-layout-item size="12" class="slds-p-around_medium">
+                <lightning-combobox 
+                    options={templateList}
+                    value={selectedTemplateId}
+                    placeholder="Select a Template"
+                    onchange={onChangeSelectedTemplate}
+                    label="Templates">
+                </lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" class="slds-p-around_medium">
+                <lightning-button 
+                    disabled={isCreateButtonDisabled}
+                    label="Create Case"
+                    onclick={onClickCreateCase}>
+                </lightning-button>
+            </lightning-layout-item>
+
+        </lightning-layout>
+        
+        
+    </lightning-card>
+
+</template>

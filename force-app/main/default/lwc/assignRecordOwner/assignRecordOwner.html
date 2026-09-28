@@ -1,0 +1,64 @@
+<!--
+  @description       : 
+  @author            : Brian Ezell (Simply EZ)
+  @group             : 
+  @last modified on  : 10-08-2024
+  @last modified by  : Brian Ezell (Simply EZ)
+-->
+<template>
+    
+    <lightning-card title="Assign Record Owner" icon-name="standard:account" class="slds-p-around_small">
+
+        <div>
+            <lightning-layout multiple-rows="true" class="slds-p-around_small">
+                <lightning-layout-item size="12" class="slds-p-around_small">
+                    <lightning-combobox 
+                        label="Assign Type"
+                        value={selectedAssignType}
+                        placeholder="Choose Type"
+                        options={optionsAssignType}
+                        disabled={isReadOnly}
+                        onchange={onChangeAssignType}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-p-around_small">
+                
+                    <template lwc:if={showSelectionCombo}>
+                        
+                        <template lwc:if={comboBoxHasOptions}>
+                            <lightning-combobox
+                                label="Choose Owner"
+                                placeholder="Choose Owner"
+                                options={optionsForSelection}
+                                value={selectedOwnerId}
+                                disabled={isReadOnly}
+                                onchange={onChangeSelectedOwner}>
+                            </lightning-combobox>
+                        </template>
+
+                        <template lwc:else> 
+                            No options available 
+                        </template>
+
+                    </template>
+
+                </lightning-layout-item>
+
+                <template lwc:if={showSaveButton}>
+                    <lightning-layout-item size="12" class="slds-p-around_small">
+                        <lightning-button
+                            label="Update Owner"
+                            value="Update Owner"
+                            variant="brand"
+                            onclick={onClickUpdateOwner}>
+                        </lightning-button>
+                    </lightning-layout-item>
+                </template>
+                
+            </lightning-layout>
+        </div>
+
+    </lightning-card>
+
+</template>

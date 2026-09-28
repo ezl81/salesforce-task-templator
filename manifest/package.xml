@@ -1,52 +1,314 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
-		<members>*</members>
+		<members>AssignRecordOwnerController</members>
+		<members>AssignRecordOwnerControllerTest</members>
+		<members>CaseProgressTrackerController</members>
+		<members>CaseProgressTrackerControllerTest</members>
+		<members>CaseTally</members>
+		<members>CaseTallyTest</members>
+		<members>CaseTaskCheckListController</members>
+		<members>CaseTaskCheckListControllerTest</members>
+		<members>CaseTemplateHelper</members>
+		<members>CaseTemplateHelperTest</members>
+		<members>CaseTrackerController</members>
+		<members>CaseTrackerControllerTest</members>
+		<members>CaseTriggerController</members>
+		<members>CaseTriggerControllerTest</members>
+		<members>CaseTriggerHandler</members>
+		<members>CasesOnObjectController</members>
+		<members>CasesOnObjectControllerTest</members>
+		<members>CloneAllTemplates</members>
+		<members>CloneAllTemplatesTest</members>
+		<members>CloneTemplateController</members>
+		<members>CloneTemplateControllerTest</members>
+		<members>CommonFunctions</members>
+		<members>CommonFunctionsTest</members>
+		<members>Constants</members>
+		<members>CreateCaseFromTemplateTierController</members>
+		<members>CreateObjectTemplateController</members>
+		<members>CreateObjectTemplateControllerTest</members>
+		<members>CreateProcessFlowController</members>
+		<members>CreateProcessFlowControllerTest</members>
+		<members>CreateProcessHelper</members>
+		<members>CreateProcessHelperTest</members>
+		<members>DependenciesController</members>
+		<members>DependenciesControllerTest</members>
+		<members>EventTriggerController</members>
+		<members>EventTriggerControllerTest</members>
+		<members>EventTriggerHandler</members>
+		<members>ExportTemplateController</members>
+		<members>ExportTemplateControllerTest</members>
+		<members>ImportTemplateController</members>
+		<members>ImportTemplateControllerTest</members>
+		<members>ImportTemplateHelper</members>
+		<members>ObjectAndHierarchyHelper</members>
+		<members>SecurityFunctions</members>
+		<members>SecurityFunctionsTest</members>
+		<members>SObjectData</members>
+		<members>SObjectDataTest</members>
+		<members>TaskTrackerController</members>
+		<members>TaskTrackerControllerTest</members>
+		<members>TaskTriggerController</members>
+		<members>TaskTriggerControllerTest</members>
+		<members>TaskTriggerHandler</members>
+		<members>TemplateBuilderController</members>
+		<members>TemplateBuilderControllerTest</members>
+		<members>TemplateDeleteController</members>
+		<members>TemplateDeleteControllerTest</members>
+		<members>TemplateHelper</members>
+		<members>TemplateHelperTest</members>
+		<members>TemplateStepTriggerController</members>
+		<members>TemplateStepTriggerHandler</members>
+		<members>TemplateTriggerController</members>
+		<members>TemplateTriggerControllerTest</members>
+		<members>TemplateTriggerHandler</members>
+		<members>TestDataFactory</members>
+		<members>TriggerHandler</members>
+		<members>WelcomeController</members>
+		<members>WelcomeControllerTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
-		<members>*</members>
-		<name>ApexComponent</name>
-	</types>
-	<types>
-		<members>*</members>
+		<members>VisualCaseTracker</members>
+		<members>VisualTaskTracker</members>
 		<name>ApexPage</name>
 	</types>
 	<types>
-		<members>*</members>
-		<name>ApexTestSuite</name>
-	</types>
-	<types>
-		<members>*</members>
+		<members>CaseTrigger</members>
+		<members>EventTrigger</members>
+		<members>TaskTrigger</members>
+		<members>TemplateStepTrigger</members>
+		<members>TemplateTrigger</members>
 		<name>ApexTrigger</name>
 	</types>
 	<types>
-		<members>*</members>
+		<members>CaseProgressTracker</members>
+		<members>CaseTaskCheckList</members>
+		<members>CasesOnObject</members>
+		<members>CloneTemplate</members>
+		<members>ExportTemplate</members>
+		<members>ImportTemplate</members>
+		<members>RedirectFlow</members>
+		<members>TemplateBuilder</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>
-		<members>*</members>
+		<members>Case.Simply Tasks</members>
+		<name>BusinessProcess</name>
+	</types>
+	<types>
+		<members>Case.Simply_Tasks_Case_Compact_Layout</members>
+		<members>Task_Template_Step__c.Task_Template_Step_Compact_Layout</members>
+		<members>Task_Template__c.Simply_Tasks_Compact_Layout</members>
+		<name>CompactLayout</name>
+	</types>
+	<types>
+		<members>Simply_Ez_Tasks</members>
+		<members>Simply_Ez_Tasks_Admin</members>
+		<members>Simply_Tasks</members>
+		<members>Simply_Tasks_Admin</members>
+		<name>CustomApplication</name>
+	</types>
+	<types>
+		<members>Activity.Dependent_Tasks_To_Complete__c</members>
+		<members>Activity.Is_Simply_Tasks_Created__c</members>
+		<members>Activity.Is_Task_Completed__c</members>
+		<members>Activity.Status__c</members>
+		<members>Activity.Step_Order__c</members>
+		<members>Activity.Task_Template_Step__c</members>
+		<members>Case.Is_Parent_Case__c</members>
+		<members>Case.Is_Simply_Tasks_Case__c</members>
+		<members>Case.Level__c</members>
+		<members>Case.Master_Case__c</members>
+		<members>Case.Number_of_Tasks_Completed__c</members>
+		<members>Case.Number_of_Tasks_To_Complete__c</members>
+		<members>Case.Progress__c</members>
+		<members>Case.Status__c</members>
+		<members>Case.Task_Template_Step__c</members>
+		<members>Case.Task_Template__c</members>
+		<members>Case.Top_Level_Case_Id__c</members>
+		<members>Case.Top_Level_Case__c</members>
+		<members>Master_Case__c.Case__c</members>
+		<members>Master_Task_Template__c.Task_Template__c</members>
+		<members>Object__c.Api_Name__c</members>
+		<members>Simply_Task_Setting__mdt.Area__c</members>
+		<members>Simply_Task_Setting__mdt.Name__c</members>
+		<members>Simply_Task_Setting__mdt.Value__c</members>
+		<members>Task_Dependency__c.Case__c</members>
+		<members>Task_Dependency__c.Task_Depends_On_Id__c</members>
+		<members>Task_Dependency__c.Task_Id__c</members>
+		<members>Task_Dependency__c.Task_Template_Step__c</members>
+		<members>Task_Template_Step_Dependency__c.Depends_On_Step__c</members>
+		<members>Task_Template_Step_Dependency__c.Description__c</members>
+		<members>Task_Template_Step_Dependency__c.Explain__c</members>
+		<members>Task_Template_Step_Dependency__c.Master_Template__c</members>
+		<members>Task_Template_Step_Dependency__c.Step__c</members>
+		<members>Task_Template_Step_Dependency__c.Task_Template__c</members>
+		<members>Task_Template_Step__c.Activity_Type__c</members>
+		<members>Task_Template_Step__c.Assigned_To_Name__c</members>
+		<members>Task_Template_Step__c.Assigned_Type__c</members>
+		<members>Task_Template_Step__c.Assignee_Id__c</members>
+		<members>Task_Template_Step__c.Description__c</members>
+		<members>Task_Template_Step__c.Duration_In_Days__c</members>
+		<members>Task_Template_Step__c.Order__c</members>
+		<members>Task_Template_Step__c.Parent_Task_Template__c</members>
+		<members>Task_Template_Step__c.Template_Master__c</members>
+		<members>Task_Template_Step__c.Templated_Name__c</members>
+		<members>Task_Template__c.Assigned_To_Name__c</members>
+		<members>Task_Template__c.Assigned_Type__c</members>
+		<members>Task_Template__c.Assignee_Id__c</members>
+		<members>Task_Template__c.Case_Record_Type__c</members>
+		<members>Task_Template__c.Case_Type__c</members>
+		<members>Task_Template__c.Is_Active__c</members>
+		<members>Task_Template__c.Is_Master_Template__c</members>
+		<members>Task_Template__c.Level__c</members>
+		<members>Task_Template__c.Master_Task_Template__c</members>
+		<members>Task_Template__c.Number_Of_Child_Template_Steps__c</members>
+		<members>Task_Template__c.Number_of_Child_Steps__c</members>
+		<members>Task_Template__c.Object_Api_Name__c</members>
+		<members>Task_Template__c.Object_Type__c</members>
+		<members>Task_Template__c.Parent_Template__c</members>
+		<members>Task_Template__c.Record_Owner__c</members>
+		<members>Task_Template__c.Templated_Name__c</members>
+		<members>Task_Template__c.Templated_Object__c</members>
+		<members>Task_Template__c.Templated_Objects__c</members>
+		<members>Task_Template__c.Total_Number_Of_Steps__c</members>
+		<members>Template_Export__c.Task_Template__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Simply_Task_Setting.Case_Status_Closed</members>
+		<members>Simply_Task_Setting.Case_Status_Start</members>
+		<members>Simply_Task_Setting.Case_Status_Working</members>
+		<members>Simply_Task_Setting.Task_Status_Completed</members>
+		<members>Simply_Task_Setting.Task_Status_Pending</members>
+		<members>Simply_Task_Setting.Task_Status_Start</members>
+		<name>CustomMetadata</name>
+	</types>
+	<types>
+		<members>Activity</members>
+		<members>Case</members>
+		<members>Master_Case__c</members>
+		<members>Master_Task_Template__c</members>
+		<members>Object__c</members>
+		<members>Simply_Task_Setting__mdt</members>
+		<members>Task_Dependency__c</members>
+		<members>Task_Template_Step_Dependency__c</members>
+		<members>Task_Template_Step__c</members>
+		<members>Task_Template__c</members>
+		<members>Template_Export__c</members>
+		<members>Template_Import__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Simply_Tasks_Admin_Permissions</members>
+		<name>CustomPermission</name>
+	</types>
+	<types>
+		<members>Object__c</members>
+		<members>Start_Here</members>
+		<members>Task_Template_Step__c</members>
+		<members>Task_Template__c</members>
+		<members>Template_Export__c</members>
+		<members>Template_Import__c</members>
 		<name>CustomTab</name>
 	</types>
 	<types>
-		<members>Record_Merge_Log_Record_Page</members>
+		<members>Case_Record_Page1</members>
+		<members>Object_page</members>
+		<members>Simply_Tasks_Case_Record_Page</members>
+		<members>Simply_Tasks_Template_Record_Page</members>
+		<members>Simply_Tasks_Template_User_Record_Page</members>
+		<members>Start_Here</members>
+		<members>Template_Export_Record_Page</members>
+		<members>Template_Import_Record_Page</members>
+		<members>Template_Steps_Record_Page</members>
 		<name>FlexiPage</name>
 	</types>
 	<types>
-		<members>Record_Merge_Log__c-Record Merge Log Layout</members>
+		<members>Case_Delete_Template</members>
+		<members>Task_Template_Delete_Templates</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Activity_Type</members>
+		<members>Assign_Type</members>
+		<members>Status</members>
+		<name>GlobalValueSet</name>
+	</types>
+	<types>
+		<members>Case-Simply Tasks Case Layout</members>
+		<members>Master_Task_Template__c-Master Task Template Layout</members>
+		<members>Simply_Task_Setting__mdt-Simply Task Setting Layout</members>
+		<members>Task-Task Layout</members>
+		<members>Task_Dependency__c-Task Dependency Layout</members>
+		<members>Task_Template_Step_Dependency__c-Task Template Step Dependency Layout</members>
+		<members>Task_Template_Step__c-Task Template Step Layout</members>
+		<members>Task_Template__c-Task Template Layout</members>
+		<members>Template_Export__c-Template Export Layout</members>
+		<members>Template_Import__c-Template Import Layout</members>
 		<name>Layout</name>
 	</types>
 	<types>
-		<members>*</members>
+		<members>assignRecordOwner</members>
+		<members>createCaseFromTemplateWithHierarchy</members>
+		<members>createObjectTemplate</members>
+		<members>templateDelete</members>
+		<members>visualFlow</members>
+		<members>welcome</members>
 		<name>LightningComponentBundle</name>
 	</types>
 	<types>
-		<members>*</members>
+		<members>Activity.AllActivities</members>
+		<members>Activity.MyActivities</members>
+		<members>Activity.TodaysTasks</members>
+		<members>Activity.UpcomingEvents</members>
+		<members>Case.Simply_Task_Cases</members>
+		<members>Task_Template_Step__c.All</members>
+		<members>Task_Template_Step__c.Template_Steps</members>
+		<members>Task_Template__c.All</members>
+		<members>Task_Template__c.Parent_Templates</members>
+		<members>Template_Export__c.All</members>
+		<members>Template_Import__c.All</members>
+		<name>ListView</name>
+	</types>
+	<types>
+		<members>Simply_Tasks_Administrator</members>
+		<members>Simply_Tasks_User</members>
 		<name>PermissionSet</name>
 	</types>
 	<types>
-		<members>*</members>
-		<name>StaticResource</name>
+		<members>Case.Delete_Related_Cases</members>
+		<members>Task_Template__c.Clone_Template</members>
+		<members>Task_Template__c.Delete_Template</members>
+		<members>Task_Template__c.Export_Template</members>
+		<members>Template_Import__c.Import_Template</members>
+		<name>QuickAction</name>
 	</types>
-	<version>67.0</version>
+	<types>
+		<members>Case.Simply_Tasks_Case</members>
+		<members>Task_Template__c.Task</members>
+		<name>RecordType</name>
+	</types>
+    <types>
+        <members>blue_progress</members>
+        <members>blue_progress_100</members>
+        <members>complete_png</members>
+        <members>event</members>
+        <members>eventdone</members>
+        <members>fullscreen</members>
+        <members>htmltest</members>
+        <members>lightningComponentUtil</members>
+        <members>mermaid</members>
+        <members>mermaid_min_js</members>
+        <members>task</members>
+        <members>taskdone</members>
+        <members>togglehorizontal</members>
+        <members>togglevertical</members>
+        <members>white_progress</members>
+        <members>white_progress_100</members>
+        <name>StaticResource</name>
+    </types>
+	<version>66.0</version>
 </Package>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test Mermaid</title>
+        <!--FOR LOCAL-->
+        <!--<script type="text/javascript" src="./mermaid_min_js.js"></script>-->
+        <script type="text/javascript" src="/resource/1755086632000/SimplyEzTasks__mermaid_min_js"></script>
+    </head>
+    <body>
+
+        <div id="flow" class="mermaid">
+            graph TD
+            A[Enter Chart Definition] --> B(Preview)
+            B --> C{decide}
+            C --> D[Keep<img src='./SimplyEzTasks__task' width='40' height='40' />]
+            C --> E[Edit Definition]
+            E --> B
+            D --> F[Save Image and Code]
+            F --> B
+        </div>
+
+            <script>
+                mermaid.initialize({
+                    startOnLoad: true
+        });
+    </script>
+
+
+    </body>
+</html>
